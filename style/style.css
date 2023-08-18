@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Quicksand:wght@300&family=Ubuntu&display=swap');
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+body{
+  background-image: url("../img/transporte.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+
+}
+
+/* Crie a sobreposição semi-transparente */
+body::before {
+  content: "";
+  display: block;
+  position: absolute;  
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95); 
+}
+body::after {
+  z-index: inherit;
+}
+.navbar {
+  background-color: transparent;
+}
+.card {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(21, 38, 189, 0.1);
+  
+}
+.form-group label {
+  font-weight: bold;
+  font-family: Oswald; /* Replace with your preferred font family */
+}
+
+/* Changing the font family for the form elements */
+.form-control {
+  font-family: Quicksand; /* Replace with your preferred font family */
+}
+.bgimg {
+    /* The image used */
+    background-image: url("../img/transporte.jpg");
+  
+    /* Full height */
+    height: 100vh;
+    width: 100vw;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
+  }
+  .opaque
+  {
+      filter: brightness(30%);
+  }
+.centro_centro{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    padding: 4px;
+}
+.box {
+	-webkit-box-shadow: 6px 6px 10px rgb(0, 0, 0); 
+	   -moz-box-shadow: 6px 6px 10px rgb(0, 0, 0); 
+	        box-shadow: 6px 6px 10px rgb(0, 0, 0); 	
+}
+.opacidade-color-w{
+    background-color: rgba(255, 255, 255,0.0);
+}
+
+/* Card dias */
+
+.voutchers {
+  position: relative;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  max-width: 720px;
+  min-width: 150px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  overflow: hidden;
+  background-color: #fff;
+ 
+}
+
+.voutcher-divider {
+  display: flex
+}
+
+.voutcher-left {
+  width: 60%
+}
+
+.voutcher-name {
+  color: rgb(3, 55, 62);
+  font-size: 14px;
+  font-family: Oswald;
+  font-weight: bold;
+}
+
+.valor-receber {
+  color: rgb(28, 29, 31);
+  font-size: 22px;
+  font-weight: bold;
+  font-family: Oswald;
+}
+
+.voutcher-right {
+  width: 40%;
+  background-color: rgb(3, 55, 62);
+  color: #fff
+}
+.off {
+    font-size: 10px;
+    position: relative;
+    bottom: 5px;
+    font-family: Quicksand;
+}
+.quant-dia-rodado {
+  font-size: 30px;
+  font-weight: bold;
+  position: relative;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  top: 5px
+}
+
+
+/* card titulo */
+.custom-card {
+  max-height: 200px;
+  color: white; /* Cor do texto */
+
+  padding: 10px;
+  text-align: center;
+  background-color: rgba(9, 9, 9,0.4);
+  /* box-shadow: 0 4px 6px rgb(9, 9, 9); */
+}
+/* Estilize o título central */
+.card-title-center {
+  font-size: 50px;
+  margin-bottom: 15px;
+  font-family: Ubuntu
+}
+
+.custom-divider {
+  width: 50%; /* Largura do divisor */
+  height: 2px; /* Altura do divisor */
+  background-color: #656464; /* Cor do divisor */
+  margin: auto; /* Margens para centralizar o divisor */
+
+}
+@media only screen and (max-width: 992px) {
+    /* .centro_centro_sm{
+        display: block;
+        justify-content: center;
+        align-items: center
+    } */
+}
+@media only screen and (min-width: 719px) {
+  .voutcher-name {
+    font-size: 25px;
+  }
+  
+  .valor-receber {
+    color: rgb(28, 29, 31);
+    font-size: 35px;
+    font-weight: bold;
+    font-family: Oswald;
+  }
+  
+  .off {
+      font-size: 20px;
+  }
+  .quant-dia-rodado {
+    font-size: 50px;
+  }
+}

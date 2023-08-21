@@ -48,20 +48,24 @@
     <div class="centro_centro">
       <!-- Selecionar a Rota -->
       <div class="flex-column selected-rotas col-12 centro_centro">
-        <label for="rota" class="rota-label col-12 centro_centro">Selecione a rota</label>
+        <label for="rotas" class="rota-label col-12 centro_centro">Selecione a rota</label>
         <select class="form-control" id="rotas" name="rotas" data-live-search="true">
           <option selected="selected" value="default">
             Selecione uma rota
           </option>
         </select>  
+
         <div class="spinner-border loading-indicator" id="loadingIndicator" role="status">
           <span class="sr-only">Loading...</span>
         </div>
+
+  
      </div>
     </div>
 
 
-    <!-- Dias -->
+    <div id="detalhes_rotas"></div>
+        <!-- Dias -->
     <!-- <div class="row centro_centro">
       <div class="card voutchers col-12">
         <div class="voutcher-divider">
@@ -76,6 +80,7 @@
         </div>
       </div>
     </div> -->
+  
 
     <!--  tela de agendamento -->
     <!-- beck-end -->
@@ -94,10 +99,7 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
-
-    <script>
-   
-    </script>
+    <script src="./script/base.js"></script>
     <script src="./script/rotas.js"></script>
   </body>
 </html>

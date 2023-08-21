@@ -1,52 +1,90 @@
-window.onload = function() {
-    preencherRotas();
-}
-
-function capturarValores() {
-    var valorFixo = parseFloat(document.getElementById("valorFixo").value.replace(/[R$\s.]/g, "").replace(",", ".")); //converte para float!
-    var kmPavimentado = document.getElementById("kmPavimentado").value;
-    var valorKmPavimentado = document.getElementById("valorKmPavimentado").value;
-    var kmNaoPavimentado = document.getElementById("kmNaoPavimentado").value;
-    var valorKmNaoPavimentado = document.getElementById("valorKmNaoPavimentado").value;
-    
-    console.log("Valor Fixo:", valorFixo);
-    console.log("KM Pavimentado:", kmPavimentado);
-    console.log("Valor KM Pavimentado:", valorKmPavimentado);
-    console.log("KM Não Pavimentado:", kmNaoPavimentado);
-    console.log("Valor KM Não Pavimentado:", valorKmNaoPavimentado);
-}
-
-//Preenchimento de rotas
-function preencherRotas(){
-    const rotaSelect = document.getElementById('rotas');
+window.onload = function () {
+  const rotaInput = document.getElementById("rotas");
+  const loadingIndicator = document.getElementById("loadingIndicator");
+  var selectedRota = "default";
+  //Preenchimento de rotas
+  function preencherRotas() {
+    const rotaSelect = document.getElementById("rotas");
     // Preencha as opções com valores de ROTA 1 a ROTA 33
     for (let i = 1; i <= 33; i++) {
-      const rota = 'ROTA ' + i;
+      const rota = "ROTA " + i;
       const option = new Option(rota, rota);
       rotaSelect.appendChild(option);
     }
+  }
+  preencherRotas();
+
+  //FAZER METODO
+  // Adicione um evento de mudança à opção selecionada
+  rotaInput.addEventListener("change", function () {
+    rotaInput.disabled = true;
+    selectedRota = this.value;
+    console.log("Rota selecionada: " + selectedRota);
+    loadingIndicator.style.display = "flex";
+
+    setTimeout(() => {
+      // Esconda o indicador de loading após o atraso (simulando o carregamento de dados)
+      loadingIndicator.style.display = "none";
+      rotaInput.disabled = false; 
+      //se encontrou a rota ou não    
+      addCardRota(selectedRota);  
+
+    }, 500);
+  });
+
+  // Função para adicionar o card
+  function addCardRota(rota) {
+    let elementContainer = document.getElementById("detalhes_rotas");
+
+    if(selectedRota=='default') 
+    elementContainer.innerHTML = '<h1>Selecione um Rota</h1>';
+    else   
+      elementContainer.innerHTML = preencherCardRotas(rota);
+  }
+
+ function preencherCardRotas(rota){
+  let valorFixo = ROTAS[rota].valorFixo;
+  let kmPavimentado = ROTAS[rota].kmPavimentado;
+  let kmNaoPavimentado = ROTAS[rota].kmNaoPavimentado;
+  let valorKmPavimentado =  ROTAS[rota].valorKmPavimentado;
+  let valorKmNaoPavimentado = ROTAS[rota].valorKmNaoPavimentado;
+  let baseStringHtml = '';
+
+  //22 dias
+  if(valorFixo==null)
+    return "<h1 class='centro-centro col-12'>Em branco</h1>"
+
+  for(let i=1; i<23;i++){
+    baseStringHtml+='<div class="row centro_centro">'+
+    '<div class="card voutchers col-12">'+
+      '<div class="voutcher-divider">'+
+        '<div class="voutcher-right text-center border-left">'+
+          '<h5 class="quant-dia-rodado">'+i+'</h5>'+
+          '<span class="off">'+ (i>1? "Dias Rodados":"Dia Rodado")+'</span>'+
+        '</div>'+
+        '<div class="voutcher-left text-center">'+
+          '<span class="voutcher-name">Valor a Receber</span>'+
+          '<h5 class="valor-receber">'+formatCurrency((valorFixo + i*((kmPavimentado*valorKmPavimentado)+(kmNaoPavimentado*valorKmNaoPavimentado))))+'</h5>'+
+        '</div>'+
+      '</div>'+
+   '</div>'+
+  '</div>';
+  }
+
+  return baseStringHtml;
 }
 
-//FAZER METODO
-const rotaInput = document.getElementById('rota');
-const loadingIndicator = document.getElementById('loadingIndicator');
-// Adicione um evento de mudança à opção selecionada
+}
 
-rotaInput.addEventListener('change', function() {
-  rotaInput.disabled = true;
-  const selectedRota = this.value;
-  console.log('Rota selecionada: ' + selectedRota);
-  loadingIndicator.style.display = 'flex';
-
-   setTimeout(() => {
-    // Esconda o indicador de loading após o atraso (simulando o carregamento de dados)
-    loadingIndicator.style.display = 'none';
-    rotaInput.disabled = false;
-  }, 500); 
-
-})
-
-
+// function capturarValores(valor) {
+//  let valor_convertido = parseFloat(
+//     document
+//       .getElementById("valorFixo")
+//       .value.replace(/[R$\s.]/g, "")
+//       .replace(",", ".")
+//   ); //converte para float!
+//   return valor_convertido;
+// }
 
 // Atualize o componente Selectpicker após adicionar as opções
 // const realInputs = document.querySelectorAll(".real-input");
@@ -54,12 +92,10 @@ rotaInput.addEventListener('change', function() {
 //   input.addEventListener("input", formatCurrency);
 // });
 
-// function formatCurrency(event) {
-//   const input = event.target;
-//   const value = input.value.replace(/\D/g, ""); // Remove non-digit characters
-//   const formattedValue = Intl.NumberFormat("pt-BR", {
-//     style: "currency",
-//     currency: "BRL",
-//   }).format(value / 100);
-//   input.value = formattedValue;
-// }
+function formatCurrency(valor) {
+  const formattedValue = Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  }).format(valor);
+  return formattedValue;
+}

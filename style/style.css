@@ -175,8 +175,13 @@ body::after {
  font-family: Ubuntu;
  font-weight: bold;
  margin: 4px;
+ max-width: 300px;
+ text-align: center;
 
  border-radius: 20px;
+}
+select{
+  font-family: Ubuntu;;
 }
 
 .loading-indicator {

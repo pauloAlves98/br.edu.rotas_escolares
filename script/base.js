@@ -1,6 +1,36 @@
 const ROTAS = {
-    "ROTA 1": {},
-    "ROTA 2": {},
+    "ROTA 1": {
+        id:"ROTA 1",
+        condutor: "",
+        placaVeiculo:"",
+        rota: '1. (Manhã- ida) – Sítio Pendencia, Sítio Engenho Velho, Sítio Cajueiro,\
+         Rua Projetada, Sitio Portelinha, Novo Pernambuco.\
+         2. (Manhã volta - Tarde ida) – Novo Pernambuco, Sítio Silvestre, Sítio Cajueiro, Sitio Mata Verde, Sítio Engenho velho, Sitio Barbalho,\
+         Sítio Pendencia, Sítio Mata verde, Novo Pernambuco, Sítio Silvestre, Sítio Tapoio, Novo Pernambuco. 3. (Tarde volta- Noite ida) – Novo Pernambuco, Sítio Tapoio, Sítio Silvestre, Sítio Mata Verde, Sítio Barbalho, Sítio Tamboril, Sítio Pendencia, Sítio Santa Rita, Sítio Mata Verde, Sítio Brejo, Sítio Silvestre, Sítio Cacimbinha, Novo Pernambuco. 4. (Noite Volta) – Novo Pernambuco, Sítio Cacimbinha, Sítio Silvestre, Sítio Brejo, Sítio Santa Rita, \
+         Sítio Mata Verde, Sítio Pendencia'
+        ,
+        kmPavimentado:13.571,
+        kmNaoPavimentado: 78.71,
+        valorFixo:2206.89735418111,
+        valorKmPavimentado: 1.69606438540608,
+        valorKmNaoPavimentado: 2.0447192906279,
+    },
+    "ROTA 2": {
+        id:"ROTA 2",
+        condutor: "",
+        placaVeiculo:"",
+        rota: '1. (Manhã- ida) – Sítio Pendencia, Sítio Engenho Velho, Sítio Cajueiro,\
+         Rua Projetada, Sitio Portelinha, Novo Pernambuco.\
+         2. (Manhã volta - Tarde ida) – Novo Pernambuco, Sítio Silvestre, Sítio Cajueiro, Sitio Mata Verde, Sítio Engenho velho, Sitio Barbalho,\
+         Sítio Pendencia, Sítio Mata verde, Novo Pernambuco, Sítio Silvestre, Sítio Tapoio, Novo Pernambuco. 3. (Tarde volta- Noite ida) – Novo Pernambuco, Sítio Tapoio, Sítio Silvestre, Sítio Mata Verde, Sítio Barbalho, Sítio Tamboril, Sítio Pendencia, Sítio Santa Rita, Sítio Mata Verde, Sítio Brejo, Sítio Silvestre, Sítio Cacimbinha, Novo Pernambuco. 4. (Noite Volta) – Novo Pernambuco, Sítio Cacimbinha, Sítio Silvestre, Sítio Brejo, Sítio Santa Rita, \
+         Sítio Mata Verde, Sítio Pendencia'
+        ,
+        kmPavimentado:13.571,
+        kmNaoPavimentado: 78.71,
+        valorFixo:2206.89735418111,
+        valorKmPavimentado: 1.69606438540608,
+        valorKmNaoPavimentado: 2.0447192906279,
+    },
     "ROTA 3": {},
     "ROTA 4": {},
     "ROTA 5": {},

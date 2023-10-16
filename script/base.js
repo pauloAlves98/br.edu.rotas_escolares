@@ -12,7 +12,7 @@ const ROTAS = {
         ,
         kmPavimentado:13.571,
         kmNaoPavimentado: 78.71,
-        valorFixo:2206.89735418111,
+        valorFixo:2426.15,
         valorKmPavimentado: 1.69606438540608,
         valorKmNaoPavimentado: 2.0447192906279,
     },
@@ -24,7 +24,7 @@ const ROTAS = {
         rota: '1. (Manhã- ida) –  Sítio Cacimbinha, Sítio Pajeú, Sítio Canastra, Sítio Cacimbinhha, Sítio Colonia 2, Novo Pernambuco. 2. (Manhã- volta - Tarde ida) –  Sítio Novo Pernambuco, Sítio Cacimbinha, Sítio Pajeú, Sítio Cacimbinha, Sítio Colonia 2, Novo Pernambuco. 3. (Tarde- Volta) – Sítio Cacimbinha, Sítio Pajeú, Sítio Colonia 2.',
         kmPavimentado:2.872,
         kmNaoPavimentado: 63.238,
-        valorFixo:2206.89735418111,
+        valorFixo:2505.66,
         valorKmPavimentado: 1.69606438540608,
         valorKmNaoPavimentado: 2.0447192906279,
     },
@@ -374,7 +374,7 @@ const ROTAS = {
         kmPavimentado:47.996,
         kmNaoPavimentado:0,
         valorFixo:4065.40692701771,
-        valorKmPavimentado: 3.541,
+        valorKmPavimentado: 3.93805543727962,
         valorKmNaoPavimentado: 4.87922545286351,
     },
     "ROTA 32": {
@@ -386,7 +386,7 @@ const ROTAS = {
         kmPavimentado:47.996,
         kmNaoPavimentado:0,
         valorFixo:4065.40692701771,
-        valorKmPavimentado: 3.541,
+        valorKmPavimentado: 3.93805543727962,
         valorKmNaoPavimentado: 4.87922545286351,
     },
     "ROTA 33": {
@@ -398,7 +398,7 @@ const ROTAS = {
         kmPavimentado:47.996,
         kmNaoPavimentado:0,
         valorFixo:4065.40692701771,
-        valorKmPavimentado: 3.541,
+        valorKmPavimentado: 3.93805543727962,
         valorKmNaoPavimentado: 4.87922545286351,
     }
 }
